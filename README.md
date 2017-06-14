@@ -1,4 +1,4 @@
-# Exploiting-Global-Priors-for-RGB-D-Saliency-Detection
+# Exploiting Global Priors for RGB-D Saliency Detection
 This solution contains source code from Jianqiang Ren's research projects 
 "Exploiting Global Priors for RGB-D Saliency Detection".
 
