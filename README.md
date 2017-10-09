@@ -1,5 +1,6 @@
 # Content 
-![alt tag](RGBD Saliency.PNG)
+![Framework](https://github.com/JianqiangRen/RGB-D-Salient-Object-Detection/blob/master/RGBD%20Saliency.PNG)
+
 This repository contains source code from Jianqiang Ren's research projects 
 "Exploiting Global Priors for RGB-D Saliency Detection",published on CVPR Worshop 2015.
 
