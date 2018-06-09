@@ -1,4 +1,4 @@
-function [A,B,C,d]=plane_fit_ransac(x,y,z)
+function [A,B,C,d]=Plane_fit_ransac(x,y,z)
     int_point=0;
     try_count=0;
     k=0;
@@ -18,7 +18,7 @@ function [A,B,C,d]=plane_fit_ransac(x,y,z)
         vector1=[x_sel(2)-x_sel(1) y_sel(2)-y_sel(1) z_sel(2)-z_sel(1)];
         vector2=[x_sel(3)-x_sel(1) y_sel(3)-y_sel(1) z_sel(3)-z_sel(1)];
         norm=cross(vector1,vector2);
-        %确定方程norm(1)*(x-x_sel(1))+norm(2)*(y-y_sel(1))+norm(3)*(z-z_sel(1))=0
+        %ensure that norm(1)*(x-x_sel(1))+norm(2)*(y-y_sel(1))+norm(3)*(z-z_sel(1))=0
         for i=1:count_point
             if norm(1)*(x(i)-x_sel(1))+norm(2)*(y(i)-y_sel(1))+norm(3)*(z(i)-z_sel(1))<0.1
                 int_point=int_point+1;

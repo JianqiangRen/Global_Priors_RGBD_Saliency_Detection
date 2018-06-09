@@ -10,8 +10,6 @@ function [PixList,adjcMatrix,numClusters,totNeighborNum]=GetLabelsProp(labels)
    B=[1 1 1 
       1 1 1 
       1 1 1 ];
-       
-
    
    for i = 1:numClusters   
        PixList{i}=h*(PixList{i}(:,1)-1)+PixList{i}(:,2);      

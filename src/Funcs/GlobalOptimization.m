@@ -1,10 +1,6 @@
 function [optwCtr,PRvalue,SampleIdx] = GlobalOptimization(adjcMatrix, bdIds, colDistM, OrtDistM , neiSigma, bgWeight, fgWeight,GOP)
 % Solve the Global Optimization
 
-% Code Author: Jianqiang Ren
-% Email: rjq@zju.edu.cn
-% Date: 11/18/2014
-
 adjcMatrix_nn = LinkNNAndBoundary(adjcMatrix, bdIds);
 colDistM(adjcMatrix_nn == 0) = Inf;
 Wn = Dist2WeightMatrix(colDistM, neiSigma);      %smoothness term
@@ -59,24 +55,14 @@ end
 
 %% PR + MRF
 if strcmp(GOP,'PR+MRF')==1
-
-    %%计算采样矩阵M（选取最亮的10%和最暗的%10）
     sortPRvalue = sort(PRvalue(PRvalue > 0),'descend');
     up_thres = sortPRvalue(ceil(length(sortPRvalue).*0.5));
     low_thres = 0;
     SampleIdx =[find(PRvalue>=up_thres);find(PRvalue<=low_thres)];
-
-
     M = sparse(SampleIdx,SampleIdx,ones(length(SampleIdx),1),size(adjcMatrix,1),size(adjcMatrix,2));
-    
-    
-  cvx_begin quiet
-    variable MRFSal(spNum)
 
-        minimize(      norm(M*(MRFSal-PRvalue) +  1.*(D-W) * MRFSal,2)              )
-
-  cvx_end
-
+    alpha = 1.0;
+    MRFSal=(M'*M +alpha*(D-W)'*(D-W))\M'*M*PRvalue;
 
     optwCtr=MRFSal;
 end

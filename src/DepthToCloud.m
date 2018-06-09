@@ -1,4 +1,4 @@
-function [pcloud, distance] = depthToCloud(depth, topleft)
+function [pcloud, distance] = DepthToCloud(depth, topleft)
 % depthToCloud.m - Convert depth image into 3D point cloud
 % Author: Liefeng Bo and Kevin Lai
 %
