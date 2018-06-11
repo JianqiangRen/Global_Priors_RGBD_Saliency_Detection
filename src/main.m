@@ -16,7 +16,7 @@ load(strcat('..\dataset\rawDepth\',ImgIndex,'_Depth.mat'));
 pcloud = DepthToCloud(smoothedDepth);
      
 tic
-   [salmap,labels] = GPSaliency(img,rawDepth,smoothedDepth,pcloud,false,false,true,false,'PR+MRF','BDN111');
+[salmap,labels] = SalientDetect(img,rawDepth,smoothedDepth,pcloud,false,false,true,false,'PR+MRF','BDN111');
 toc
 
  

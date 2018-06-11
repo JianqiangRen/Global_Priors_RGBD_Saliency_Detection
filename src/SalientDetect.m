@@ -1,8 +1,9 @@
-function [salmap,labels] = GPSaliency(img255,rawDepth,SmoothedDepthImage,pcloud,normals,NFDSmoothed,showfigure,labels,GOP,PriorSel)
+function [salmap,labels] = SalientDetect(img255,rawDepth,SmoothedDepthImage,pcloud,normals,NFDSmoothed,showfigure,labels,GOP,PriorSel)
 
 SmoothedDepthImage =double(SmoothedDepthImage);
-%% Region contrast
-[ContrastSaliency,DP_OP,FB,PR,MP,labels,RCmap,bpWeightedmap,sample]=RegionLocalContrast(rawDepth,SmoothedDepthImage,img255,pcloud,normals,NFDSmoothed,labels,GOP,PriorSel);
+
+%% calculate salient-map via global priors method
+[ContrastSaliency,DP_OP,FB,PR,MP,labels,RCmap,bpWeightedmap,sample]=GPSal(rawDepth,SmoothedDepthImage,img255,pcloud,normals,NFDSmoothed,labels,GOP,PriorSel);
 salmap = ContrastSaliency;
 
 salmap = salmap - min(min(salmap));

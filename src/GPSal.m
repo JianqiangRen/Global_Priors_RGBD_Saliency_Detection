@@ -11,6 +11,7 @@ function [ContrastSaliency,DP_OP,FB,PR,MP,labels,RCmap,bpWeightedmap,Sample]=Reg
 %   AreaProb = AreaProb./max(AreaProb);
 %   
 %   numClusters = length(AreaProb);
+
 %% superpixel using meanshift
 if labels ==0
  SpatialBandwidth =6;%6 
@@ -37,32 +38,25 @@ end
     meanLabCol = colorspace('Lab<-', double(meanRgbCol)/255);
     [meanPos,CenterPos] = GetNormedMeanPos(PixList, h, w);
  
-    
- 
-%% ÔØÈëNormal Flux Density  
+     
 if normals == 0 
     % calculate suface normal for each region
-%     tic
     [RegionNormal,RegionDepth] = GetRegionNormal(rawDepth,pcloud,CenterPos);
     NFDf = abs(RegionNormal(3,:))./sqrt(RegionNormal(1,:).^2 + RegionNormal(2,:).^2 +RegionNormal(3,:).^2 );
     NFDf = NFDf.';
     
     medianNfDf =0.5*( mean(mean(NFDf(RegionDepth<10)))+min(min(NFDf(RegionDepth<10))));
     NFDf(RegionDepth<10) = medianNfDf;
-%     toc
 else
     NFD = regionprops(labels,NFD,'PixelValues');
     NFDPixels =struct2cell(NFD);
-    NFDf=cellfun(@mean,NFDPixels).';
-    
+    NFDf=cellfun(@mean,NFDPixels).';  
  end
 
     DepthPixels= regionprops(labels,Depth01,'PixelValues');
     DepthPixels = struct2cell(DepthPixels);
     depthProb=cellfun(@mean,DepthPixels).';   
       
-
-
  %% Get super-pixel properties  
     %get id of boundary-connected regions
     bdIds = GetBndPatchIds(labels);
@@ -82,7 +76,6 @@ else
    MixPrior = sqrt(1 - depthProb).*NFDf.*(1-bgProb);
    MixPrior = (MixPrior - min(MixPrior))./(max(MixPrior)-min(MixPrior));
    [optwCtr,PRvalue,SampleIdx] = GlobalOptimization(adjcMatrix, bdIds, rgbdDistM, OrtDistM, neiSigma, bgProb, fgProb,GOP);
-
 
 %% 
     RCmap= zeros(size(labels));
