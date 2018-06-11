@@ -7,7 +7,16 @@ this repository contains source codes of paper [Exploiting Global Priors for RGB
 <div align=center><img width="1000" height="500" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/result.png?raw=true"/></div>
 
 # How to Use
-> * our code runs with matlab, you need first have matlab installed on your machine.
-> * execute main.m in src directory
-> * the result will pop out
+> * have matlab installed on your machine.
+> * execute main.m in src directory.
+> * the result will pop out.
 
+# Citation
+```
+@inproceedings{ren2015exploiting, 
+    title={Exploiting global priors for RGB-D saliency detection}, 
+    author={Ren, Jianqiang and Gong, Xiaojin and Yu, Lu and Zhou, Wenhui and Ying Yang, Michael}, 
+    booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops}, 
+    pages={25--32}, 
+    year={2015} }
+```
