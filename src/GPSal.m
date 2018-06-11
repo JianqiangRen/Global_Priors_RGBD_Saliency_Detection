@@ -1,4 +1,4 @@
-function [ContrastSaliency,DP_OP,FB,PR,MP,labels,RCmap,bpWeightedmap,Sample]=RegionLocalContrast(rawDepth,SmoothedDepth,Img,pcloud,normals,NFD,labels,GOP,PriorSel)
+function [ContrastSaliency,DP_OP,FB,PR,MP,labels,RCmap,bpWeightedmap,Sample]=GPSal(rawDepth,SmoothedDepth,Img,pcloud,normals,NFD,labels,GOP,PriorSel)
    [h,w,chn] = size(Img);
     Depth01 = SmoothedDepth./max(max(SmoothedDepth));
 
