@@ -4,12 +4,14 @@ this repository contains source codes of paper [Exploiting Global Priors for RGB
 # Algorithm Framework
 <div align=center><img width="600" height="600" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/framework.PNG?raw=true"/></div>
 
-<div align=center><img width="1000" height="400" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/result.png?raw=true"/></div>
+# Comparision
+<div align=center><img width="1000" height="700" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/comparision.png?raw=true"/></div>
 
 # How to Use
 > * have matlab installed on your machine.
 > * execute main.m in src directory.
 > * the result will pop out.
+<div align=center><img width="1000" height="400" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/result.png?raw=true"/></div>
 
 # Citation
 ```
