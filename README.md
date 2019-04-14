@@ -1,5 +1,9 @@
-# About
-this repository contains source codes of paper [Exploiting Global Priors for RGB-D Saliency Detection](https://www.cv-foundation.org/openaccess/content_cvpr_workshops_2015/W14/papers/Ren_Exploiting_Global_Priors_2015_CVPR_paper.pdf), published on CVPR Worshop 2015.
+Exploiting Global Priors for RGB-D Saliency Detection
+=====
+
+This is the source code of our paper:
+[Exploiting Global Priors for RGB-D Saliency Detection](https://www.cv-foundation.org/openaccess/content_cvpr_workshops_2015/W14/papers/Ren_Exploiting_Global_Priors_2015_CVPR_paper.pdf), CVPR 2015,Workshop
+
 
 # Algorithm Framework
 <div align=center><img width="600" height="600" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/framework.PNG?raw=true"/></div>
@@ -7,7 +11,7 @@ this repository contains source codes of paper [Exploiting Global Priors for RGB
 # Comparision
 <div align=center><img width="1000" height="700" src="https://github.com/JianqiangRen/Global_Priors_RGBD_Saliency_Detection/blob/master/assets/comparision.png?raw=true"/></div>
 
-# How to Use
+# Usage
 > * have matlab installed on your machine.
 > * execute main.m in src directory.
 > * the result will pop out.
